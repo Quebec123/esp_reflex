@@ -83,18 +83,18 @@ static void init_gpio() {
 
   for (const uint8_t pin : config::gpio::player1_in) {
     gpio_set_direction(static_cast<gpio_num_t>(pin), GPIO_MODE_INPUT);
-    gpio_set_intr_type(static_cast<gpio_num_t>(pin), GPIO_INTR_POSEDGE);
+    gpio_set_intr_type(static_cast<gpio_num_t>(pin), GPIO_INTR_NEGEDGE);
   }
 
   for (const uint8_t pin : config::gpio::player2_in) {
     gpio_set_direction(static_cast<gpio_num_t>(pin), GPIO_MODE_INPUT);
-    gpio_set_intr_type(static_cast<gpio_num_t>(pin), GPIO_INTR_POSEDGE);
+    gpio_set_intr_type(static_cast<gpio_num_t>(pin), GPIO_INTR_NEGEDGE);
   }
 
   gpio_set_direction(static_cast<gpio_num_t>(config::gpio::start_in),
                      GPIO_MODE_INPUT);
   gpio_set_intr_type(static_cast<gpio_num_t>(config::gpio::start_in),
-                     GPIO_INTR_POSEDGE);
+                     GPIO_INTR_NEGEDGE);
 
   gpio_install_isr_service(0);
 }

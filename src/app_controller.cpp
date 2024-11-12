@@ -1,5 +1,5 @@
 #include "app_controller.hpp"
-
+#define MCP23017_GPIOA 0x12
 #include "app_game.hpp"
 #include "config.hpp"
 #include "global.hpp"
@@ -108,11 +108,17 @@ static void init_i2c_devices() noexcept {
   bool success = true;
 
   if (!get_mcp_players().begin_I2C(config::i2c::address_game_leds)) {
+
     ESP_LOGE("MCP",
              "Failed to initialize MCP for game leds, i2c address: 0x%x",
              config::i2c::address_game_leds);
 
     success = false;
+  }
+  else{
+    for(int i=0;i<16;i++){
+      get_mcp_players().pinMode(i,OUTPUT);
+    }
   }
 
   if (!get_mcp_seg_player1().begin_I2C(config::i2c::address_player1_seg)) {
@@ -122,7 +128,10 @@ static void init_i2c_devices() noexcept {
 
     success = false;
   }
-
+  else{
+  for(int i=0;i<16;i++){
+    get_mcp_seg_player1().pinMode(i,OUTPUT);
+  }}
   if (!get_mcp_seg_player2().begin_I2C(config::i2c::address_player2_seg)) {
     ESP_LOGE("MCP",
              "Failed to initialize MCP for player2 seg, i2c address: 0x%x",
@@ -130,7 +139,11 @@ static void init_i2c_devices() noexcept {
 
     success = false;
   }
-
+  else{
+    for(int i=0;i<16;i++){
+      get_mcp_seg_player2().pinMode(i,OUTPUT);
+    }
+  }
   if (!get_mcp_seg_timer().begin_I2C(config::i2c::address_time_seg)) {
     ESP_LOGE("MCP",
              "Failed to initialize MCP for timer seg, i2c address: 0x%x",
@@ -138,12 +151,17 @@ static void init_i2c_devices() noexcept {
 
     success = false;
   }
+  else{
+    for(int i=0;i<16;i++){
+      get_mcp_seg_timer().pinMode(i,OUTPUT);
+    }}
 
   if (!success) {
     ESP_LOGE("MCP", "Failed to initialize all MCP devices, rebooting in 3s");
     vTaskDelay(3000 / portTICK_PERIOD_MS);
     std::terminate();
   }
+
 }
 
 template<size_t StageCount>

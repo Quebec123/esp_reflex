@@ -136,7 +136,7 @@ void play() noexcept {
                                              SegmentDisplay::Timer);
 
     while (timer > 0) {
-      if (controller::util::wait_stop_token(1000, timer_stop_token)) {
+      if (controller::util::wait_stop_token(10000, timer_stop_token)) {
         break;
       }
 

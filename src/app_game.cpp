@@ -143,6 +143,8 @@ void play() noexcept {
       --timer;
       controller::gpio::display_segment_number(static_cast<uint8_t>(timer),
                                                SegmentDisplay::Timer);
+      //ESP_LOGE("TEST", "%u score", static_cast<uint8_t>(timer));
+
     }
   });
 
@@ -153,9 +155,10 @@ void play() noexcept {
 
   controller::gpio::turn_on(config::mcp::player1_out.at(player1_target_index),
                             Output::Players);
+  //ESP_LOGE("TEST","%u pin for player 1",player1_target_index);
   controller::gpio::turn_on(config::mcp::player2_out.at(player2_target_index),
                             Output::Players);
-
+  //ESP_LOGE("TEST","%u pin for player 2",player2_target_index);
   while (player1_score < config::game::max_score &&
          player2_score < config::game::max_score && timer > 0) {
     uint8_t gpio_num = std::numeric_limits<uint8_t>::max();
@@ -180,7 +183,7 @@ void play() noexcept {
 
       controller::gpio::display_segment_number(player1_score,
                                                SegmentDisplay::Player1);
-
+     //ESP_LOGE("TEST", "%u score", player1_score);
       player1_target_index =
       impl::generate_random_player_pin(player1_target_index);
 
@@ -204,7 +207,7 @@ void play() noexcept {
 
       controller::gpio::display_segment_number(player2_score,
                                                SegmentDisplay::Player2);
-
+     // ESP_LOGE("TEST","%u score", player2_score);
       player2_target_index =
       impl::generate_random_player_pin(player2_target_index);
 

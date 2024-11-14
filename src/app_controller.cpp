@@ -23,7 +23,6 @@
 #include <cstdlib>
 #include <exception>
 #include <thread>
-
 namespace app::controller {
 
 namespace impl {

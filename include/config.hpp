@@ -35,25 +35,25 @@ constexpr inline uint8_t address_player2_seg = 0x24;
 namespace config::gpio {
 
 constexpr inline uint8_t player1_in_left_bottom         = 4;
-constexpr inline uint8_t player1_in_left_middle_bottom  = 13;
+constexpr inline uint8_t player1_in_left_middle_bottom  = 5;
 constexpr inline uint8_t player1_in_left_middle_top     = 16;
 constexpr inline uint8_t player1_in_left_top            = 17;
 constexpr inline uint8_t player1_in_right_bottom        = 18;
 constexpr inline uint8_t player1_in_right_middle_bottom = 19;
 constexpr inline uint8_t player1_in_right_middle_top    = 23;
-constexpr inline uint8_t player1_in_right_top           = 25;
+constexpr inline uint8_t player1_in_right_top           = 39; //extra
 
-constexpr inline uint8_t player2_in_left_bottom         = 26;
-constexpr inline uint8_t player2_in_left_middle_bottom  = 27;
-constexpr inline uint8_t player2_in_left_middle_top     = 32;
-constexpr inline uint8_t player2_in_left_top            = 33;
-constexpr inline uint8_t player2_in_right_bottom        = 34;
-constexpr inline uint8_t player2_in_right_middle_bottom = 35;
-constexpr inline uint8_t player2_in_right_middle_top    = 36;
-constexpr inline uint8_t player2_in_right_top           = 39;
+constexpr inline uint8_t player2_in_left_bottom         = 25;
+constexpr inline uint8_t player2_in_left_middle_bottom  = 26;
+constexpr inline uint8_t player2_in_left_middle_top     = 27;
+constexpr inline uint8_t player2_in_left_top            = 32;
+constexpr inline uint8_t player2_in_right_bottom        = 33;
+constexpr inline uint8_t player2_in_right_middle_bottom = 34;
+constexpr inline uint8_t player2_in_right_middle_top    = 35;
+constexpr inline uint8_t player2_in_right_top           = 36;
 
-constexpr inline uint8_t start_in  = 5;
-constexpr inline uint8_t start_out = 12;
+constexpr inline uint8_t start_in  = 15;
+constexpr inline uint8_t start_out = 13;
 
 // the left column is 0 to 3 from bottom to top, the right column is 4 to 7 from bottom to top
 constexpr inline std::array<uint8_t, 8> player1_in = {
@@ -99,21 +99,21 @@ constexpr inline uint8_t player2_out_right_middle_bottom = 13;
 constexpr inline uint8_t player2_out_right_middle_top    = 14;
 constexpr inline uint8_t player2_out_right_top           = 15;
 
-constexpr inline uint8_t seg_left_pin_a = 0;
-constexpr inline uint8_t seg_left_pin_b = 1;
-constexpr inline uint8_t seg_left_pin_c = 2;
-constexpr inline uint8_t seg_left_pin_d = 3;
-constexpr inline uint8_t seg_left_pin_e = 4;
-constexpr inline uint8_t seg_left_pin_f = 5;
-constexpr inline uint8_t seg_left_pin_g = 6;
+constexpr inline uint8_t seg_left_pin_a = 1;
+constexpr inline uint8_t seg_left_pin_b = 0;
+constexpr inline uint8_t seg_left_pin_c = 4;
+constexpr inline uint8_t seg_left_pin_d = 7;
+constexpr inline uint8_t seg_left_pin_e = 6;
+constexpr inline uint8_t seg_left_pin_f = 2;
+constexpr inline uint8_t seg_left_pin_g = 3;
 
-constexpr inline uint8_t seg_right_pin_a = 8;
+constexpr inline uint8_t seg_right_pin_a = 10;
 constexpr inline uint8_t seg_right_pin_b = 9;
-constexpr inline uint8_t seg_right_pin_c = 10;
-constexpr inline uint8_t seg_right_pin_d = 11;
-constexpr inline uint8_t seg_right_pin_e = 12;
-constexpr inline uint8_t seg_right_pin_f = 13;
-constexpr inline uint8_t seg_right_pin_g = 14;
+constexpr inline uint8_t seg_right_pin_c = 13;
+constexpr inline uint8_t seg_right_pin_d = 16;
+constexpr inline uint8_t seg_right_pin_e = 15;
+constexpr inline uint8_t seg_right_pin_f = 11;
+constexpr inline uint8_t seg_right_pin_g = 12;
 
 // the left column is 0 to 3 from bottom to top, the right column is 4 to 7 from bottom to top
 constexpr inline std::array<uint8_t, 8> player1_out = {

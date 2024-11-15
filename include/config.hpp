@@ -25,10 +25,10 @@ namespace config::i2c {
 constexpr inline uint8_t i2c_sda = 21;
 constexpr inline uint8_t i2c_scl = 22;
 
-constexpr inline uint8_t address_game_leds   = 0x20;
+constexpr inline uint8_t address_game_leds   = 0x24;
 constexpr inline uint8_t address_player1_seg = 0x21;
 constexpr inline uint8_t address_time_seg    = 0x22;
-constexpr inline uint8_t address_player2_seg = 0x24;
+constexpr inline uint8_t address_player2_seg = 0X20;
 
 }    // namespace config::i2c
 
@@ -99,21 +99,21 @@ constexpr inline uint8_t player2_out_right_middle_bottom = 13;
 constexpr inline uint8_t player2_out_right_middle_top    = 14;
 constexpr inline uint8_t player2_out_right_top           = 15;
 
-constexpr inline uint8_t seg_left_pin_a = 1;
-constexpr inline uint8_t seg_left_pin_b = 0;
-constexpr inline uint8_t seg_left_pin_c = 4;
-constexpr inline uint8_t seg_left_pin_d = 7;
-constexpr inline uint8_t seg_left_pin_e = 6;
-constexpr inline uint8_t seg_left_pin_f = 2;
-constexpr inline uint8_t seg_left_pin_g = 3;
+constexpr inline uint8_t seg_right_pin_a = 6; //5
+constexpr inline uint8_t seg_right_pin_b = 7; //6
+constexpr inline uint8_t seg_right_pin_c = 3;//2
+constexpr inline uint8_t seg_right_pin_d = 2;//1
+constexpr inline uint8_t seg_right_pin_e = 1;//0
+constexpr inline uint8_t seg_right_pin_f = 5;//4
+constexpr inline uint8_t seg_right_pin_g = 4;//3
 
-constexpr inline uint8_t seg_right_pin_a = 10;
-constexpr inline uint8_t seg_right_pin_b = 9;
-constexpr inline uint8_t seg_right_pin_c = 13;
-constexpr inline uint8_t seg_right_pin_d = 16;
-constexpr inline uint8_t seg_right_pin_e = 15;
-constexpr inline uint8_t seg_right_pin_f = 11;
-constexpr inline uint8_t seg_right_pin_g = 12;
+constexpr inline uint8_t seg_left_pin_a = 14;//
+constexpr inline uint8_t seg_left_pin_b = 15;//
+constexpr inline uint8_t seg_left_pin_c = 11;//
+constexpr inline uint8_t seg_left_pin_d = 10;//8
+constexpr inline uint8_t seg_left_pin_e = 9;//9
+constexpr inline uint8_t seg_left_pin_f = 13;//
+constexpr inline uint8_t seg_left_pin_g = 12;//
 
 // the left column is 0 to 3 from bottom to top, the right column is 4 to 7 from bottom to top
 constexpr inline std::array<uint8_t, 8> player1_out = {

@@ -134,16 +134,15 @@ void play() noexcept {
   std::thread timer_thread([&timer, &timer_stop_token]() {
     controller::gpio::display_segment_number(static_cast<uint8_t>(timer),
                                              SegmentDisplay::Timer);
-
+    //ESP_LOGE("TIMER","%u", static_cast<uint8_t>(timer));
     while (timer > 0) {
-      if (controller::util::wait_stop_token(10000, timer_stop_token)) {
+      if (controller::util::wait_stop_token(1000, timer_stop_token)) {
         break;
       }
 
       --timer;
       controller::gpio::display_segment_number(static_cast<uint8_t>(timer),
                                                SegmentDisplay::Timer);
-      //ESP_LOGE("TEST", "%u score", static_cast<uint8_t>(timer));
 
     }
   });
@@ -183,7 +182,7 @@ void play() noexcept {
 
       controller::gpio::display_segment_number(player1_score,
                                                SegmentDisplay::Player1);
-     //ESP_LOGE("TEST", "%u score", player1_score);
+     ESP_LOGE("TEST", "%u score", player1_score);
       player1_target_index =
       impl::generate_random_player_pin(player1_target_index);
 

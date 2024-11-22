@@ -41,7 +41,7 @@ constexpr inline uint8_t player1_in_left_top            = 17;
 constexpr inline uint8_t player1_in_right_bottom        = 18;
 constexpr inline uint8_t player1_in_right_middle_bottom = 19;
 constexpr inline uint8_t player1_in_right_middle_top    = 23;
-constexpr inline uint8_t player1_in_right_top           = 39; //extra
+constexpr inline uint8_t player1_in_right_top           = 36; //extra
 
 constexpr inline uint8_t player2_in_left_bottom         = 25;
 constexpr inline uint8_t player2_in_left_middle_bottom  = 26;
@@ -50,10 +50,10 @@ constexpr inline uint8_t player2_in_left_top            = 32;
 constexpr inline uint8_t player2_in_right_bottom        = 33;
 constexpr inline uint8_t player2_in_right_middle_bottom = 34;
 constexpr inline uint8_t player2_in_right_middle_top    = 35;
-constexpr inline uint8_t player2_in_right_top           = 36;
+constexpr inline uint8_t player2_in_right_top           = 39;
 
-constexpr inline uint8_t start_in  = 15;
-constexpr inline uint8_t start_out = 13;
+constexpr inline uint8_t start_in  = 13;
+constexpr inline uint8_t start_out = 15;
 
 // the left column is 0 to 3 from bottom to top, the right column is 4 to 7 from bottom to top
 constexpr inline std::array<uint8_t, 8> player1_in = {
@@ -109,7 +109,7 @@ constexpr inline uint8_t seg_right_pin_g = 4;//3
 
 constexpr inline uint8_t seg_left_pin_a = 14;//
 constexpr inline uint8_t seg_left_pin_b = 15;//
-constexpr inline uint8_t seg_left_pin_c = 11;//
+constexpr inline uint8_t seg_left_pin_c = 8;//
 constexpr inline uint8_t seg_left_pin_d = 10;//8
 constexpr inline uint8_t seg_left_pin_e = 9;//9
 constexpr inline uint8_t seg_left_pin_f = 13;//
